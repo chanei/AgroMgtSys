@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ProductCategoriesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +20,7 @@ class ProductCategoriesController extends Controller
     public function index()
     {
         $productcategories = ProductCategory::all();
+        return view('productcategories.index', ['productcategories' => $productcategories]);
     }
 
     /**
@@ -24,7 +30,7 @@ class ProductCategoriesController extends Controller
      */
     public function create()
     {
-        //
+        return view('productreviews.create');
     }
 
     /**
@@ -35,7 +41,12 @@ class ProductCategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $productcategory = new ProductCategory;
+        $productcategory->name = $request->get('name');
+        $productcategory->description = $request->get('description');
+        $productcategory->save();
+
+        return redirect()->back()->with('success', 'Category has been added');
     }
 
     /**
@@ -57,7 +68,8 @@ class ProductCategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $productcategory = ProductCategory::findOrFail($id);
+        return view('productcategories.edit', ['productcategory' => $productcategory]);
     }
 
     /**
@@ -69,7 +81,12 @@ class ProductCategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $productcategory = ProductCategory::findOrFail($id);
+        $productcategory->name = $request->get('name');
+        $productcategory->description = $request->get('description');
+        $productcategory->save();
+
+        return redirect()->back()->with('success', 'Category has been updated');
     }
 
     /**
@@ -80,6 +97,9 @@ class ProductCategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $productcategory = ProductCategory::findOrFail($id);
+        $productcategory->delete();
+
+        return redirect()->back()->with('success', 'Category has been added');
     }
 }

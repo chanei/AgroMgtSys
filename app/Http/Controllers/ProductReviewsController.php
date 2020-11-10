@@ -2,10 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
+use App\ProductReview;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductReviewsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +22,8 @@ class ProductReviewsController extends Controller
      */
     public function index()
     {
-        //
+        $productreviews = ProductReview::all();
+        return view('productreviews.index', ['productreviews' => $productreviews]);
     }
 
     /**
@@ -23,7 +33,8 @@ class ProductReviewsController extends Controller
      */
     public function create()
     {
-        //
+        $products = Product::all();
+        return view('productreviews.create', ['products' => $products]);
     }
 
     /**
@@ -34,7 +45,15 @@ class ProductReviewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $productreview = new ProductReview;
+        $productreview->user_id = Auth::user()->id;
+        $productreview->product_id  = $request->get('product_id');
+        $productreview->product_status = $request->get('product_status');
+        $productreview->rating  = $request->get('rating');
+        $productreview->review = $request->get('review');
+        $productreview->save();
+
+        return redirect()->back()->with('success', 'Review has been saved');
     }
 
     /**
@@ -56,7 +75,9 @@ class ProductReviewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $products = Product::all();
+        $productreview = ProductReview::findOrFail($id);
+        return view('productreviews.edit', ['productreview' => $productreview, 'products' => $products]);
     }
 
     /**
@@ -68,7 +89,14 @@ class ProductReviewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $productreview = ProductReview::findOrFail($id);
+        $productreview->product_id  = $request->get('product_id');
+        $productreview->product_status = $request->get('product_status');
+        $productreview->rating  = $request->get('rating');
+        $productreview->review = $request->get('review');
+        $productreview->save();
+
+        return redirect()->back()->with('success', 'Review has been updated');
     }
 
     /**
@@ -79,6 +107,9 @@ class ProductReviewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $productreview = ProductReview::findOrFail($id);
+        $productreview->delete();
+
+        return redirect()->back()->with('success', 'Review has been deleted');
     }
 }

@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
+use App\ProductCategory;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +20,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        return view('products.index', ['products' => $products]);
     }
 
     /**
@@ -23,7 +31,8 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        $productcategories = ProductCategory::all();
+        return view('products.create', ['productcategories' => $productcategories]);
     }
 
     /**
@@ -34,7 +43,15 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product;
+        $product->product_category_id = $request->get('product_category_id');
+        $product->name = $request->get('name');
+        $product->description = $request->get('description');
+        $product->usage = $request->get('usage');
+        $product->save();
+        //add status and image upload
+
+        return redirect()->back()->with('success', 'Product has been added successfully');
     }
 
     /**
@@ -56,7 +73,8 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('products.edit', ['product' => $product]);
     }
 
     /**
@@ -68,7 +86,14 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->product_category_id = $request->get('product_category_id');
+        $product->name = $request->get('name');
+        $product->description = $request->get('description');
+        $product->usage = $request->get('usage');
+        $product->save();
+
+        return redirect()->back()->with('success', 'Product has been updated');
     }
 
     /**
@@ -79,6 +104,9 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return redirect()->back()->with('success', 'Product has been deleted');
     }
 }

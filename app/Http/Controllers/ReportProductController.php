@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ReportProduct;
 use Illuminate\Http\Request;
 
 class ReportProductController extends Controller
@@ -13,7 +14,8 @@ class ReportProductController extends Controller
      */
     public function index()
     {
-        //
+        $reportedproducts = ReportProduct::all();
+        return view('reportproducts.index', ['reportedproducts' => $reportedproducts]);
     }
 
     /**
@@ -23,7 +25,7 @@ class ReportProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('reportproducts.create');
     }
 
     /**
@@ -34,7 +36,16 @@ class ReportProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reportproduct = new ReportProduct;
+        $reportproduct->name = $request->get('name');
+        $reportproduct->phone_number = $request->get('phone_number');
+        $reportproduct->product_name = $request->get('product_name');
+        $reportproduct->product_dealer = $request->get('product_dealer');
+        $reportproduct->reason = $request->get('reason');
+        $reportproduct->save();
+        //add product image
+
+        return redirect()->back()->with('success', 'Your request has been submitted successfully');
     }
 
     /**

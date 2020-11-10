@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\SupportReply;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SupportReplyController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -34,7 +41,8 @@ class SupportReplyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $supportreply = new SupportReply();
+        $supportreply->user_id = Auth::user()->id;
     }
 
     /**

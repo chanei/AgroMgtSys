@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Support;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SupportController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +20,8 @@ class SupportController extends Controller
      */
     public function index()
     {
-        //
+        $supporttickets = Support::all();
+        return view('supports.index', ['supporttickets' => $supporttickets]);
     }
 
     /**
@@ -23,7 +31,7 @@ class SupportController extends Controller
      */
     public function create()
     {
-        //
+        return view('supports.create');
     }
 
     /**
@@ -34,7 +42,13 @@ class SupportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $supportticket = new Support;
+        $supportticket->user_id = Auth::user()->id;
+        $supportticket->subject = $request->get('subject');
+        $supportticket->message = $request->get('message');
+        $supportticket->save();
+
+        return redirect()->back()->with('success', 'A new support ticket has been generated');
     }
 
     /**
@@ -45,7 +59,8 @@ class SupportController extends Controller
      */
     public function show($id)
     {
-        //
+        $supportticket = Support::findOrFail($id);
+        return view('supports.show', ['supportticket' => $supportticket]);
     }
 
     /**
@@ -79,6 +94,9 @@ class SupportController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $supportticket = Support::findOrFail($id);
+        $supportticket->delete();
+
+        return redirect()->back()->with('success', 'Ticket has been deleted');
     }
 }

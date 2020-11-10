@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
+use App\User;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +20,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('users.index', ['users' => $users]);
     }
 
     /**
@@ -23,7 +31,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        $roles = Role::all();
+        return view('users.create', ['roles' => $roles]);
     }
 
     /**
@@ -34,7 +43,17 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User();
+        $user->name = $request->get('name');
+        $user->username = $request->get('username');
+        $user->email = $request->get('email');
+        $user->phone_number = $request->get('phone_number');
+        $user->password = bcrypt($request->get('password'));
+        $user->save();
+
+        $user->roles()->attach($request->get('role_id'));
+
+        return redirect()->back()->with('success', 'User has been created');
     }
 
     /**
@@ -56,7 +75,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('users.edit', ['user' => $user]);
     }
 
     /**
@@ -68,7 +88,21 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $password = $request->get('password');
+        if($password == null){
+            $newpassword = $user->password;
+        }else{
+            $newpassword = bcrypt($password);
+        }
+        $user->name = $request->get('name');
+        $user->username = $request->get('username');
+        $user->email = $request->get('email');
+        $user->phone_number = $request->get('phone_number');
+        $user->password = $newpassword;
+        $user->save();
+
+        return redirect()->back()->with('success', 'User has been updated');
     }
 
     /**
@@ -79,6 +113,9 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return redirect()->back()->with('success', 'User has been deleted');
     }
 }
