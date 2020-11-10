@@ -15,6 +15,6 @@ Final Year project
 - open your editor, change the DB_PORT in the .env field  to ```DB_PORT=3306```
 - run ```php artisan key:generate```
 - run ```php artisan migrate```
-- run ```php artisan db:seed``` to create the user roles and a default user into the database (username: user, password: pass) - this is the super admin
+- run ```php artisan db:seed``` to create the user roles and a default user into the database (email: lukwatajohn@gmail.com, password: pass) - this is the super admin
 - run ```php artisan serve```
 - open the browser using the generated server link and paste it (usually ```localhost:8000```)
