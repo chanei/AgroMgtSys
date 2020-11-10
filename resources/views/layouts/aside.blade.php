@@ -1,6 +1,6 @@
 <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
-        <a href="{{ url('home') }}">
+        <a href="{{ url('home') }}" style="color: #1b1b1b; font-weight: bold;font-size: 24px">
             Agro-Mgt Sys
         </a>
     </div>
@@ -12,34 +12,29 @@
                         <i class="fas fa-tachometer-alt"></i>Dashboard
                     </a>
                 </li>
-                <li class="{{ Request::is('customers*') ? 'active' : '' }}">
-                    <a href="{{ url('customers') }}">
-                        <i class="fas fa-users"></i>Customers
+                <li class="{{ Request::is('productcategories*') ? 'active' : '' }}">
+                    <a href="{{ url('productcategories') }}">
+                        <i class="fas fa-list"></i>Product Categories
                     </a>
                 </li>
-                <li class="{{ Request::is('drivers*') ? 'active' : '' }}">
-                    <a href="{{ url('drivers') }}">
-                        <i class="fas fa-car"></i>Drivers
+                <li class="{{ Request::is('products*') ? 'active' : '' }}">
+                    <a href="{{ url('products') }}">
+                        <i class="fas fa-list-alt"></i>Products
                     </a>
                 </li>
-                <li {{ Request::is('customer-tokens*') ? 'active' : '' }}>
-                    <a href="{{ url('customer-tokens') }}">
-                        <i class="far fa-check-square"></i>Customer Tokens
+                <li {{ Request::is('productreviews*') ? 'active' : '' }}>
+                    <a href="{{ url('productreviews') }}">
+                        <i class="far fa-check-square"></i>Product Reviews
                     </a>
                 </li>
-                <li {{ Request::is('redeemed-tokens*') ? 'active' : '' }}>
-                    <a href="{{ url('redeemed-tokens') }}">
-                        <i class="fas fa-calendar-alt"></i>Redeemed Tokens
+                <li {{ Request::is('supports*') ? 'active' : '' }}>
+                    <a href="{{ url('supports') }}">
+                        <i class="fas fa-calendar-alt"></i>Support Tickets
                     </a>
                 </li>
                 <li class="{{ Request::is('users*') ? 'active' : '' }}">
                     <a href="{{ url('users') }}">
-                        <i class="fas fa-user-md"></i>Users
-                    </a>
-                </li>
-                <li class="{{ Request::is('audit-trails*') ? 'active' : '' }}">
-                    <a href="{{ url('audit-trails') }}">
-                        <i class="fas fa-list-alt"></i>Audit Trails
+                        <i class="fas fa-users"></i>Users
                     </a>
                 </li>
             </ul>

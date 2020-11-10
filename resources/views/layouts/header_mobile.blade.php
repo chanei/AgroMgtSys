@@ -23,33 +23,28 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('customers') }}">
-                        <i class="fas fa-users"></i>Customers
+                    <a href="{{ url('productcategories') }}">
+                        <i class="fas fa-list"></i>Product Categories
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('drivers') }}">
-                        <i class="fas fa-car"></i>Drivers
+                    <a href="{{ url('products') }}">
+                        <i class="fas fa-list-alt"></i>Products
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('customer-tokens') }}">
-                        <i class="far fa-check-square"></i>Customer Tokens
+                    <a href="{{ url('productreviews') }}">
+                        <i class="far fa-check-square"></i>Product Reviews
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('redemed-tokens') }}">
-                        <i class="fas fa-calendar-alt"></i>Redeemed Tokens
+                    <a href="{{ url('supports') }}">
+                        <i class="fas fa-calendar-alt"></i>Support Tickets
                     </a>
                 </li>
                 <li>
                     <a href="{{ url('users') }}">
                         <i class="fas fa-user-md"></i>Users
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('audit-trails') }}">
-                        <i class="fas fa-list-alt"></i>Audit Trails
                     </a>
                 </li>
             </ul>

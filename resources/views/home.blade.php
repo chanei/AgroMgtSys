@@ -1,20 +1,48 @@
 @extends('layouts.app')
+@section('pagetitle')
+    Dashboard
+@endsection
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="top-campaign">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-data__tool">
+                <div class="table-data__tool-left">
+                    <h3 class="title-3 m-b-30">Dashboard</h3>
+                    <p class="title-2">Welcome back {{ Auth::user()->name }}!</p>
+                </div>
+                <div class="table-data__tool-right"></div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-md-4">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+                    <h3 class="title-5">Customers</h3>
+                    <br>
+                    <h3 class="title-1">9990</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="title-5">Drivers</h3>
+                    <br>
+                    <h3 class="title-1">9990</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="title-5">Users</h3>
+                    <br>
+                    <h3 class="title-1">9990</h3>
                 </div>
             </div>
         </div>

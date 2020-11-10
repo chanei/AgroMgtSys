@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('reportproduct', 'ReportProductController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('productcategories', 'ProductCategoriesController');
+
+Route::resource('products', 'ProductsController');
+
+Route::resource('productreviews', 'ProductReviewsController');
+
+Route::resource('supports', 'SupportController');
+
+Route::resource('supportreplies', 'SupportReplyController');
+
+Route::resource('users', 'UsersController');

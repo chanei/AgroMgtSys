@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('pagetitle')
-    Edit Driver
+    View Driver
 @endsection
 
 @section('content')
