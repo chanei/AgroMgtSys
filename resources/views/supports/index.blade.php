@@ -45,7 +45,6 @@ Support Tickets
                                     </button>
                                 </div>
                             </td>
-                            @include('users.modals.delete')
                         </tr>
                         @endforeach
                     </tbody>
