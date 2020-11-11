@@ -26,7 +26,7 @@ Product Reviews
                         <tr>
                             <th>Name</th>
                             <th>Product</th>
-                            <th>Statius</th>
+                            <th>Status</th>
                             <th>Rating</th>
                             <th>Review</th>
                             @if(Auth::user()->isAdmin())
