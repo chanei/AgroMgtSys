@@ -16,7 +16,7 @@ Support Tickets
                 </div>
                 <div class="table-data__tool-right">
                     <a class="au-btn au-btn-icon au-btn--green au-btn--small" href="{{ url('supports/create') }}">
-                        <i class="zmdi zmdi-plus"></i>add item
+                        <i class="zmdi zmdi-plus"></i>new support ticket
                     </a>
                 </div>
             </div>

@@ -17,7 +17,7 @@ Product Categories
                 @if(Auth::user()->isAdmin())
                 <div class="table-data__tool-right">
                     <a class="au-btn au-btn-icon au-btn--green au-btn--small" href="{{ url('productcategories/create') }}">
-                        <i class="zmdi zmdi-plus"></i>add item
+                        <i class="zmdi zmdi-plus"></i>add category
                     </a>
                 </div>
                 @endif

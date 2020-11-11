@@ -17,7 +17,7 @@ Products
                 @if(Auth::user()->isAdmin())
                 <div class="table-data__tool-right">
                     <a class="au-btn au-btn-icon au-btn--green au-btn--small" href="{{ url('products/create') }}">
-                        <i class="zmdi zmdi-plus"></i>add item
+                        <i class="zmdi zmdi-plus"></i>add new product
                     </a>
                 </div>
                 @endif

@@ -16,7 +16,7 @@ Product Reviews
                 </div>
                 <div class="table-data__tool-right">
                     <a class="au-btn au-btn-icon au-btn--green au-btn--small" href="{{ url('productreviews/create') }}">
-                        <i class="zmdi zmdi-plus"></i>add item
+                        <i class="zmdi zmdi-plus"></i>add new review
                     </a>
                 </div>
             </div>
