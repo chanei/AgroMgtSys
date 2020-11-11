@@ -38,6 +38,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ url('reportproducts') }}">
+                        <i class="far fa-file"></i>Report Product
+                    </a>
+                </li>
+                <li>
                     <a href="{{ url('supports') }}">
                         <i class="fas fa-calendar-alt"></i>Support Tickets
                     </a>

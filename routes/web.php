@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('reportproduct', 'ReportProductController');
+Route::resource('reportproducts', 'ReportProductController');
 
 Auth::routes();
 

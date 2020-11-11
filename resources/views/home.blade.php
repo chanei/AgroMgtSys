@@ -22,25 +22,25 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="title-5">Customers</h3>
-                    <br>
-                    <h3 class="title-1">9990</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="title-5">Drivers</h3>
-                    <br>
-                    <h3 class="title-1">9990</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
                     <h3 class="title-5">Users</h3>
+                    <br>
+                    <h3 class="title-1">9990</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="title-5">Product Categories</h3>
+                    <br>
+                    <h3 class="title-1">9990</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="title-5">Products</h3>
                     <br>
                     <h3 class="title-1">9990</h3>
                 </div>

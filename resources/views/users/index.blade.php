@@ -24,27 +24,20 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>date</th>
-                            <th>order ID</th>
-                            <th>name</th>
-                            <th>date</th>
-                            <th>order ID</th>
-                            <th>name</th>
-                            <th>date</th>
-                            <th>order ID</th>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($users as $user)
                         <tr>
-                            <td>2018</td>
-                            <td>100398</td>
-                            <td>100398</td>
-                            <td>2018</td>
-                            <td>100398</td>
-                            <td>100398</td>
-                            <td>2018</td>
-                            <td>100398</td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->username }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->phone_number }}</td>
                             <td>
                                 <div class="table-data-feature">
                                     <button class="item" data-toggle="tooltip" data-placement="top" title="View">
@@ -60,6 +53,7 @@
                             </td>
                             @include('users.modals.delete')
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
 

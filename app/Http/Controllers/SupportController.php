@@ -46,6 +46,7 @@ class SupportController extends Controller
         $supportticket->user_id = Auth::user()->id;
         $supportticket->subject = $request->get('subject');
         $supportticket->message = $request->get('message');
+        $supportticket->status = 'Pending';
         $supportticket->save();
 
         return redirect()->back()->with('success', 'A new support ticket has been generated');

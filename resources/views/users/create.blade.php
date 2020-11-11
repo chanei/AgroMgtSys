@@ -21,16 +21,35 @@
                 </div>
             </div>
             <div>
-                <form action="" method="post" autocomplete="off">
+                <form action="{{ url('users') }}" method="post" autocomplete="off">
+                    @csrf
                     <div class="form-group">
-                        <label for="nf-email" class=" form-control-label">Email</label>
-                        <input type="email" id="nf-email" name="nf-email" placeholder="Enter Email.." class="form-control">
-                        <span class="help-block">Please enter your email</span>
+                        <label class="form-control-label">Name</label>
+                        <input type="text" name="name" placeholder="Enter Name.." class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="nf-password" class=" form-control-label">Password</label>
-                        <input type="password" id="nf-password" name="nf-password" placeholder="Enter Password.." class="form-control">
-                        <span class="help-block">Please enter your password</span>
+                        <label class="form-control-label">Username</label>
+                        <input type="text" name="username" placeholder="Enter Username.." class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Email</label>
+                        <input type="email" name="email" placeholder="Enter Email.." class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class=" form-control-label">Phone Number</label>
+                        <input type="text" name="phone_number" placeholder="Enter Phone Number.." class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class=" form-control-label">Role</label>
+                        <select name="role_id" class="form-control" required>
+                            @foreach ($roles as $role)
+                                <option value="{{ $role->id }}">{{ $role->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class=" form-control-label">Password</label>
+                        <input type="password" name="password" placeholder="Enter Password.." class="form-control" required>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-sm">

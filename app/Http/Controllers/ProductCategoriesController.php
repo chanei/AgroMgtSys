@@ -30,7 +30,7 @@ class ProductCategoriesController extends Controller
      */
     public function create()
     {
-        return view('productreviews.create');
+        return view('productcategories.create');
     }
 
     /**
