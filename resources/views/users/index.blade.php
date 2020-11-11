@@ -46,7 +46,7 @@
                                     <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                         <i class="zmdi zmdi-edit"></i>
                                     </button>
-                                    <button class="item" data-toggle="modal" data-target="#delete_modal" title="Delete">
+                                    <button class="item" data-toggle="modal" data-target="#delete_modal{{ $user->id }}" title="Delete">
                                         <i class="zmdi zmdi-delete"></i>
                                     </button>
                                 </div>

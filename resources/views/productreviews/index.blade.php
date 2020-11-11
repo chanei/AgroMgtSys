@@ -55,18 +55,15 @@ Product Reviews
                             <td>{{ $review->review }}</td>
                             <td>
                                 <div class="table-data-feature">
-                                    <button class="item" data-toggle="tooltip" data-placement="top" title="View">
-                                        <i class="zmdi zmdi-eye"></i>
-                                    </button>
                                     <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                         <i class="zmdi zmdi-edit"></i>
                                     </button>
-                                    <button class="item" data-toggle="modal" data-target="#delete_modal" title="Delete">
+                                    <button class="item" data-toggle="modal" data-target="#delete_modal{{ $review->id }}" title="Delete">
                                         <i class="zmdi zmdi-delete"></i>
                                     </button>
                                 </div>
                             </td>
-                            @include('users.modals.delete')
+                            @include('productreviews.modals.delete')
                         </tr>
                         @endforeach
                     </tbody>

@@ -43,12 +43,6 @@ Support Tickets
                                     <button class="item" data-toggle="tooltip" data-placement="top" title="View">
                                         <i class="zmdi zmdi-eye"></i>
                                     </button>
-                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                        <i class="zmdi zmdi-edit"></i>
-                                    </button>
-                                    <button class="item" data-toggle="modal" data-target="#delete_modal" title="Delete">
-                                        <i class="zmdi zmdi-delete"></i>
-                                    </button>
                                 </div>
                             </td>
                             @include('users.modals.delete')

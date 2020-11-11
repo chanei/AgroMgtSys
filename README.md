@@ -4,6 +4,7 @@ Final Year project
 
 ## Project Initialization
 
+- Install git
 - Install composer (<https://getcomposer.org/>)
 - Have a working server (wamp / xampp)
 - Minimum php version should be 7.3
