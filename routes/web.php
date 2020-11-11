@@ -30,6 +30,7 @@ Route::resource('products', 'ProductsController');
 
 Route::resource('productreviews', 'ProductReviewsController');
 
+Route::get('supports/resolve/{id}', 'SupportController@updateStatus');
 Route::resource('supports', 'SupportController');
 
 Route::resource('supportreplies', 'SupportReplyController');

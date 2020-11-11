@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Support;
+use App\SupportReply;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -61,7 +62,8 @@ class SupportController extends Controller
     public function show($id)
     {
         $supportticket = Support::findOrFail($id);
-        return view('supports.show', ['supportticket' => $supportticket]);
+        $ticketreplies = SupportReply::where('support_id', $id)->get();
+        return view('supports.show', ['ticket' => $supportticket, 'ticketreplies' => $ticketreplies]);
     }
 
     /**
@@ -75,16 +77,13 @@ class SupportController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function updateStatus($id)
     {
-        //
+        $supportticket = Support::findOrFail($id);
+        $supportticket->status = 'Solved';
+        $supportticket->save();
+
+        return redirect()->back()->with('success', 'Ticket has been resolved');
     }
 
     /**

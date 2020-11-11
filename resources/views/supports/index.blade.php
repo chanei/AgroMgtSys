@@ -37,12 +37,18 @@ Support Tickets
                             <td>{{ $ticket->user->name }}</td>
                             <td>{{ $ticket->subject }}</td>
                             <td>{{ $ticket->message }}</td>
-                            <td>{{ $ticket->status }}</td>
+                            <td>
+                                @if($ticket->status == 'Pending')
+                                <span class="badge badge-pill badge-warning" style="color: #ffffff">Pending</span>
+                                @else
+                                <span class="badge badge-pill badge-success">{{ $ticket->status }}</span>
+                                @endif
+                            </td>
                             <td>
                                 <div class="table-data-feature">
-                                    <button class="item" data-toggle="tooltip" data-placement="top" title="View">
+                                    <a class="item" href="{{ action('SupportController@show', $ticket->id) }}" title="View">
                                         <i class="zmdi zmdi-eye"></i>
-                                    </button>
+                                    </a>
                                 </div>
                             </td>
                         </tr>
