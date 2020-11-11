@@ -24,7 +24,7 @@
                 <div class="card-body">
                     <h3 class="title-5">Users</h3>
                     <br>
-                    <h3 class="title-1">9990</h3>
+                    <h3 class="title-1">{{ $users }}</h3>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                 <div class="card-body">
                     <h3 class="title-5">Product Categories</h3>
                     <br>
-                    <h3 class="title-1">9990</h3>
+                    <h3 class="title-1">{{ $productcategories }}</h3>
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@
                 <div class="card-body">
                     <h3 class="title-5">Products</h3>
                     <br>
-                    <h3 class="title-1">9990</h3>
+                    <h3 class="title-1">{{ $products }}</h3>
                 </div>
             </div>
         </div>
