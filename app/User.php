@@ -56,4 +56,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\SupportReply', 'user_id');
     }
+
+    public function isAdmin()
+    {
+        return $this->is_admin;
+    }
 }

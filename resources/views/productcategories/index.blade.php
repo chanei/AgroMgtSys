@@ -14,11 +14,13 @@ Product Categories
                 <div class="table-data__tool-left">
                     <h3 class="title-3 m-b-30">Product Categories</h3>
                 </div>
+                @if(Auth::user()->isAdmin())
                 <div class="table-data__tool-right">
                     <a class="au-btn au-btn-icon au-btn--green au-btn--small" href="{{ url('productcategories/create') }}">
                         <i class="zmdi zmdi-plus"></i>add item
                     </a>
                 </div>
+                @endif
             </div>
             <div class="table-responsive">
                 <table class="table">
@@ -26,7 +28,9 @@ Product Categories
                         <tr>
                             <th>Name</th>
                             <th>Description</th>
+                            @if(Auth::user()->isAdmin())
                             <th></th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -34,6 +38,7 @@ Product Categories
                         <tr>
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->description }}</td>
+                            @if(Auth::user()->isAdmin())
                             <td>
                                 <div class="table-data-feature">
                                     <a class="item" href="{{ action('ProductCategoriesController@edit', $category->id) }}" title="Edit">
@@ -45,6 +50,7 @@ Product Categories
                                 </div>
                             </td>
                             @include('productcategories.modals.delete')
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

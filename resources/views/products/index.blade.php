@@ -14,11 +14,13 @@ Products
                 <div class="table-data__tool-left">
                     <h3 class="title-3 m-b-30">Products</h3>
                 </div>
+                @if(Auth::user()->isAdmin())
                 <div class="table-data__tool-right">
                     <a class="au-btn au-btn-icon au-btn--green au-btn--small" href="{{ url('products/create') }}">
                         <i class="zmdi zmdi-plus"></i>add item
                     </a>
                 </div>
+                @endif
             </div>
             <div class="table-responsive">
                 <table class="table">
@@ -29,7 +31,9 @@ Products
                             <th>Description</th>
                             <th>Usage</th>
                             <th>Status</th>
+                            @if(Auth::user()->isAdmin())
                             <th></th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -46,6 +50,7 @@ Products
                                 {{ $product->product_status }}
                                 @endif
                             </td>
+                            @if(Auth::user()->isAdmin())
                             <td>
                                 <div class="table-data-feature">
                                     {{-- <button class="item" data-toggle="tooltip" data-placement="top" title="View">
@@ -60,6 +65,7 @@ Products
                                 </div>
                             </td>
                             @include('products.modals.delete')
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

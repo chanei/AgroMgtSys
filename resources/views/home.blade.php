@@ -17,7 +17,7 @@
         </div>
     </div>
     <br>
-
+    @if(Auth::user()->isAdmin())
     <div class="row">
         <div class="col-md-4">
             <div class="card">
@@ -47,5 +47,6 @@
             </div>
         </div>
     </div>
+    @endif
 </div>
 @endsection

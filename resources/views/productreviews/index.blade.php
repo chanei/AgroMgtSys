@@ -29,7 +29,9 @@ Product Reviews
                             <th>Statius</th>
                             <th>Rating</th>
                             <th>Review</th>
+                            @if(Auth::user()->isAdmin())
                             <th></th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -53,6 +55,7 @@ Product Reviews
                                 @endif
                             </td>
                             <td>{{ $review->review }}</td>
+                            @if(Auth::user()->isAdmin())
                             <td>
                                 <div class="table-data-feature">
                                     <a class="item" href="{{ action('ProductReviewsController@edit', $review->id) }}" title="Edit">
@@ -64,6 +67,7 @@ Product Reviews
                                 </div>
                             </td>
                             @include('productreviews.modals.delete')
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

@@ -19,3 +19,4 @@ Final Year project
 - run ```php artisan db:seed``` to create the user roles and a default user into the database (email: lukwatajohn@gmail.com, password: pass) - this is the super admin
 - run ```php artisan serve```
 - open the browser using the generated server link and paste it (usually ```localhost:8000```)
+- create another user account and take not of the menu items and what the displays show

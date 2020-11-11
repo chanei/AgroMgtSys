@@ -37,11 +37,13 @@
                         <i class="fas fa-calendar-alt"></i>Support Tickets
                     </a>
                 </li>
+                @if(Auth::user()->isAdmin())
                 <li class="{{ Request::is('users*') ? 'active' : '' }}">
                     <a href="{{ url('users') }}">
                         <i class="fas fa-users"></i>Users
                     </a>
                 </li>
+                @endif
             </ul>
         </nav>
     </div>
