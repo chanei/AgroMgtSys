@@ -55,9 +55,9 @@ Product Reviews
                             <td>{{ $review->review }}</td>
                             <td>
                                 <div class="table-data-feature">
-                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                    <a class="item" href="{{ action('ProductReviewsController@edit', $review->id) }}" title="Edit">
                                         <i class="zmdi zmdi-edit"></i>
-                                    </button>
+                                    </a>
                                     <button class="item" data-toggle="modal" data-target="#delete_modal{{ $review->id }}" title="Delete">
                                         <i class="zmdi zmdi-delete"></i>
                                     </button>

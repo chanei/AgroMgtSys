@@ -77,7 +77,7 @@ class ProductReviewsController extends Controller
     {
         $products = Product::all();
         $productreview = ProductReview::findOrFail($id);
-        return view('productreviews.edit', ['productreview' => $productreview, 'products' => $products]);
+        return view('productreviews.edit', ['review' => $productreview, 'products' => $products]);
     }
 
     /**
