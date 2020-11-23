@@ -12,6 +12,11 @@
                         <i class="fas fa-tachometer-alt"></i>Dashboard
                     </a>
                 </li>
+                <li class="{{ Request::is('suppliers*') ? 'active' : '' }}">
+                    <a href="{{ url('suppliers') }}">
+                        <i class="fas fa-gift"></i>Suppliers
+                    </a>
+                </li>
                 <li class="{{ Request::is('productcategories*') ? 'active' : '' }}">
                     <a href="{{ url('productcategories') }}">
                         <i class="fas fa-list"></i>Product Categories

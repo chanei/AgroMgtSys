@@ -23,6 +23,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ url('suppliers') }}">
+                        <i class="fas fa-gift"></i>Suppliers
+                    </a>
+                </li>
+                <li>
                     <a href="{{ url('productcategories') }}">
                         <i class="fas fa-list"></i>Product Categories
                     </a>
