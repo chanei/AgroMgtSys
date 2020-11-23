@@ -24,6 +24,14 @@
                 <form action="{{ url('products') }}" method="post" autocomplete="off">
                     @csrf
                     <div class="form-group">
+                        <label class=" form-control-label">Supplier</label>
+                        <select name="supplier_id" class="form-control" required>
+                            @foreach ($suppliers as $supplier)
+                            <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label class=" form-control-label">Product Category</label>
                         <select name="product_category_id" class="form-control" required>
                             @foreach ($productcategories as $category)
@@ -43,10 +51,10 @@
                         <label class=" form-control-label">Usage</label>
                         <input type="text" name="usage" placeholder="Enter Usage.." class="form-control">
                     </div>
-                    {{-- <div class="form-group">
+                    <div class="form-group">
                         <label class=" form-control-label">Upload product image</label>
-                        <input type="text" name="product_image" class="form-control">
-                    </div> --}}
+                        <input type="file" name="product_image" class="form-control">
+                    </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-sm">
                             <i class="fa fa-dot-circle-o"></i> Submit

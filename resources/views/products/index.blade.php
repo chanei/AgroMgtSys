@@ -26,6 +26,8 @@ Products
                 <table class="table">
                     <thead>
                         <tr>
+                            <th>Image</th>
+                            <th>Supplier</th>
                             <th>Category</th>
                             <th>Name</th>
                             <th>Description</th>
@@ -39,13 +41,21 @@ Products
                     <tbody>
                         @foreach ($products as $product)
                         <tr>
+                            <td>
+                                @if($product->product_image == null)
+                                <img src="{{ asset('template/images/icon/logo-mini.png') }}" height="100" width="100" />
+                                @else
+                                <img src="{{ asset('uploads/products/'.$product_image) }}" height="100" width="100" />
+                                @endif
+                            </td>
+                            <td>{{ $product->supplier->name }}</td>
                             <td>{{ $product->productcategory->name }}</td>
                             <td>{{ $product->name }}</td>
                             <td>{{ $product->description }}</td>
                             <td>{{ $product->usage }}</td>
                             <td>
                                 @if($product->product_status == null)
-                                Not set
+                                unavailable
                                 @else
                                 {{ $product->product_status }}
                                 @endif

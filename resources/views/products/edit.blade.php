@@ -25,6 +25,14 @@
                     @csrf
                     @method('PATCH')
                     <div class="form-group">
+                        <label class=" form-control-label">Suppliers</label>
+                        <select name="supplier_id" class="form-control" required>
+                            @foreach ($suppliers as $supplier)
+                            <option value="{{ $supplier->id }}" {{ $supplier->supplier_id == $supplier->id ? 'selected="selected"' : '' }}>{{ $supplier->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label class=" form-control-label">Product Category</label>
                         <select name="product_category_id" class="form-control" required>
                             @foreach ($productcategories as $category)
@@ -43,6 +51,10 @@
                     <div class="form-group">
                         <label class=" form-control-label">Usage</label>
                         <input type="text" name="usage" placeholder="Enter Usage.." value="{{ $product->usage }}" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class=" form-control-label">Update product image</label>
+                        <input type="file" name="product_image" class="form-control">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-sm">
