@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $table = 'products';
-    protected $fillable = ['supplier_id', 'product_category_id', 'name', 'description', 'usage', 'product_status', 'product_image'];
+    protected $fillable = ['supplier_id', 'product_category_id', 'name','serial', 'description', 'usage', 'product_status', 'product_image'];
 
     public function supplier()
     {

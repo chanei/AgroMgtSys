@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div>
-                <form action="{{ url('products') }}" method="post" autocomplete="off">
+                <form action="{{ url('products') }}" method="post" autocomplete="off" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label class=" form-control-label">Supplier</label>
@@ -42,6 +42,10 @@
                     <div class="form-group">
                         <label class=" form-control-label">Name</label>
                         <input type="text" name="name" placeholder="Enter Name.." class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class=" form-control-label">Serial Number</label>
+                        <input type="text" name="serial" placeholder="Enter Product Serial.." class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label class=" form-control-label">Description</label>

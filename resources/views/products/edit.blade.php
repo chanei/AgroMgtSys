@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div>
-                <form action="{{ action('ProductsController@update', $product->id) }}" method="post" autocomplete="off">
+                <form action="{{ action('ProductsController@update', $product->id) }}" method="post" autocomplete="off" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
                     <div class="form-group">
@@ -43,6 +43,10 @@
                     <div class="form-group">
                         <label class=" form-control-label">Name</label>
                         <input type="text" name="name" placeholder="Enter Name.." class="form-control" value="{{ $product->name }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label class=" form-control-label">Serial No.</label>
+                        <input type="text" name="serial" placeholder="Enter Product Serial.." class="form-control" value="{{ $product->serial }}" required>
                     </div>
                     <div class="form-group">
                         <label class=" form-control-label">Description</label>

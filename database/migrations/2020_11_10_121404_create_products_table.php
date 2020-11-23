@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->integer('supplier_id')->unsigned();
             $table->integer('product_category_id')->unsigned();
             $table->string('name');
+            $table->string('serial')->nullable();
             $table->string('description');
             $table->string('usage')->nullable();
             $table->string('product_status')->nullable(); // whether product is counterfiet or genuine

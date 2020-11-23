@@ -57,6 +57,7 @@ class ProductsController extends Controller
         $product->supplier_id = $request->get('supplier_id');
         $product->product_category_id = $request->get('product_category_id');
         $product->name = $request->get('name');
+        $product->serial = $request->get('serial');
         $product->description = $request->get('description');
         $product->usage = $request->get('usage');
         $product->product_image = $product_image;
@@ -113,6 +114,7 @@ class ProductsController extends Controller
         $product->supplier_id = $request->get('supplier_id');
         $product->product_category_id = $request->get('product_category_id');
         $product->name = $request->get('name');
+        $product->serial = $request->get('serial');
         $product->description = $request->get('description');
         $product->usage = $request->get('usage');
         $product->product_image = $product_image;

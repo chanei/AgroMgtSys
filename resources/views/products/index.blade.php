@@ -30,6 +30,7 @@ Products
                             <th>Supplier</th>
                             <th>Category</th>
                             <th>Name</th>
+                            <th>Serial</th>
                             <th>Description</th>
                             <th>Usage</th>
                             <th>Status</th>
@@ -45,12 +46,13 @@ Products
                                 @if($product->product_image == null)
                                 <img src="{{ asset('template/images/icon/logo-mini.png') }}" height="100" width="100" />
                                 @else
-                                <img src="{{ asset('uploads/products/'.$product_image) }}" height="100" width="100" />
+                                <img src="{{ asset('uploads/products/'.$product->product_image) }}" height="100" width="100" />
                                 @endif
                             </td>
                             <td>{{ $product->supplier->name }}</td>
                             <td>{{ $product->productcategory->name }}</td>
                             <td>{{ $product->name }}</td>
+                            <td>{{ $product->serial }}</td>
                             <td>{{ $product->description }}</td>
                             <td>{{ $product->usage }}</td>
                             <td>
