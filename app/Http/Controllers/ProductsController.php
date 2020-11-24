@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\ProductCategory;
+use App\ProductReview;
 use App\Supplier;
 use Illuminate\Http\Request;
 
@@ -75,7 +76,9 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $reviews = ProductReview::where('product_id', $id)->get();
+        return view('products.show', ['product'=>$product, 'reviews' => $reviews]);
     }
 
     /**

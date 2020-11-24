@@ -29,12 +29,17 @@
                 </li>
                 <li {{ Request::is('productreviews*') ? 'active' : '' }}>
                     <a href="{{ url('productreviews') }}">
-                        <i class="far fa-check-square"></i>Product Reviews
+                        <i class="fas fa-check-square"></i>Product Reviews
                     </a>
                 </li>
                 <li {{ Request::is('reportproducts*') ? 'active' : '' }}>
                     <a href="{{ url('reportproducts') }}">
-                        <i class="far fa-file"></i>Report Product
+                        <i class="fas fa-file"></i>Report Product
+                    </a>
+                </li>
+                <li {{ Request::is('checkproduct*') ? 'active' : '' }}>
+                    <a href="{{ url('checkproduct') }}">
+                        <i class="fas fa-check"></i>Check Product
                     </a>
                 </li>
                 <li {{ Request::is('supports*') ? 'active' : '' }}>

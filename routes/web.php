@@ -38,3 +38,5 @@ Route::resource('supports', 'SupportController');
 Route::resource('supportreplies', 'SupportReplyController');
 
 Route::resource('users', 'UsersController');
+
+Route::resource('checkproduct', 'CheckProductController');

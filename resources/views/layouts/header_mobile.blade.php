@@ -39,12 +39,17 @@
                 </li>
                 <li>
                     <a href="{{ url('productreviews') }}">
-                        <i class="far fa-check-square"></i>Product Reviews
+                        <i class="fas fa-check-square"></i>Product Reviews
                     </a>
                 </li>
                 <li>
                     <a href="{{ url('reportproducts') }}">
-                        <i class="far fa-file"></i>Report Product
+                        <i class="fas fa-file"></i>Report Product
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('checkproduct') }}">
+                        <i class="fas fa-check"></i>Check Product
                     </a>
                 </li>
                 <li>

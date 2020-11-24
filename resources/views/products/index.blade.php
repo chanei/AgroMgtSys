@@ -65,9 +65,9 @@ Products
                             @if(Auth::user()->isAdmin())
                             <td>
                                 <div class="table-data-feature">
-                                    {{-- <button class="item" data-toggle="tooltip" data-placement="top" title="View">
+                                    <a class="item" href="{{ action('ProductsController@show', $product->id) }}" title="View">
                                         <i class="zmdi zmdi-eye"></i>
-                                    </button> --}}
+                                    </button>
                                     <a class="item" href="{{ action('ProductsController@edit', $product->id) }}" title="Edit">
                                         <i class="zmdi zmdi-edit"></i>
                                     </a>
