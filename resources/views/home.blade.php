@@ -15,6 +15,7 @@
                 <div class="table-data__tool-right"></div>
             </div>
         </div>
+        @if(!Auth::user()->isAdmin())
         <div class="col-lg-12">
             <br>
             <br>
@@ -32,6 +33,7 @@
                 </div>
             </form>
         </div>
+        @endif
     </div>
     <br>
     @if(Auth::user()->isAdmin())

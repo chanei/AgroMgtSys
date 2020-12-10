@@ -56,10 +56,10 @@ Products
                             <td>{{ $product->description }}</td>
                             <td>{{ $product->usage }}</td>
                             <td>
-                                @if($product->product_status == null)
-                                unavailable
+                                @if($product->product_status == 'available')
+                                    <span class="badge badge-success">available</span>
                                 @else
-                                {{ $product->product_status }}
+                                    <span class="badge badge-danger">unavailable</span>
                                 @endif
                             </td>
                             @if(Auth::user()->isAdmin())

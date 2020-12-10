@@ -56,6 +56,13 @@
                         <input type="text" name="usage" placeholder="Enter Usage.." class="form-control">
                     </div>
                     <div class="form-group">
+                        <label class=" form-control-label">Product Status</label>
+                        <select name="product_status" class="form-control" required>
+                            <option>available</option>
+                            <option>unavailable</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label class=" form-control-label">Upload product image</label>
                         <input type="file" name="product_image" class="form-control">
                     </div>

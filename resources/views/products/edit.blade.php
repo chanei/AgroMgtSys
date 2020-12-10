@@ -57,6 +57,13 @@
                         <input type="text" name="usage" placeholder="Enter Usage.." value="{{ $product->usage }}" class="form-control">
                     </div>
                     <div class="form-group">
+                        <label class=" form-control-label">Product Status</label>
+                        <select name="product_status" class="form-control" required>
+                            <option {{ $product->product_status == 'available' ? 'selected="selected"' : '' }}>available</option>
+                            <option {{ $product->product_status == 'unavailable' ? 'selected="selected"' : '' }}>unavailable</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label class=" form-control-label">Update product image</label>
                         <input type="file" name="product_image" class="form-control">
                     </div>

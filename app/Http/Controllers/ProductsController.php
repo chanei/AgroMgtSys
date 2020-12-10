@@ -61,6 +61,7 @@ class ProductsController extends Controller
         $product->serial = $request->get('serial');
         $product->description = $request->get('description');
         $product->usage = $request->get('usage');
+        $product->product_status = $request->get('product_status');
         $product->product_image = $product_image;
         $product->save();
         //add status and image upload
@@ -120,6 +121,7 @@ class ProductsController extends Controller
         $product->serial = $request->get('serial');
         $product->description = $request->get('description');
         $product->usage = $request->get('usage');
+        $product->product_status = $request->get('product_status');
         $product->product_image = $product_image;
         $product->save();
 
